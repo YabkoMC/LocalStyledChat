@@ -1,5 +1,8 @@
-![Logo](https://i.imgur.com/DC12A5i.png)
-# Styled Chat
+# Locale Styled Chat
+
+### This is fork of [StyledChat](https://github.com/Patbox/StyledChat). Not addon!  
+It requires [PlayerAbilityLib](https://www.curseforge.com/minecraft/mc-mods/pal)
+
 It's a simple mod that allows server owners to change how their chat looks!
 
 It adds support for [modern chat formatting](https://placeholders.pb4.eu/user/text-format/) supported by Minecraft, 
@@ -20,11 +23,13 @@ If you have any questions, you can ask them on my [Discord](https://pb4.eu/disco
 
 
 ## Commands (and permissions):
+- `/global` - Switch to global channel
+- `/local` - Switch to local channel
 - `/styledchat` - Main command (`styledchat.main`, available by default)
 - `/styledchat reload` - Reloads configuration and styles (requires `styledchat.reload`)
 
 ## Configuration:
-You can find config file in `./config/styled-chat.json`.
+You can find config file in `./config/locale-styled-chat.json`.
 [Formatting uses Simplified Text Format](https://placeholders.pb4.eu/user/text-format/).
 It supports usage of placeholders from [Placeholder API](https://placeholders.pb4.eu/user/general/).
 Additionally, every message type has few own local variables.
@@ -35,6 +40,7 @@ Additionally, every message type has few own local variables.
   "defaultStyle": {                 // Default style settings
     "displayName": "...",           // Display name (local variables: ${vanillaDisplayName}, ${name})
     "chat": "...",                  // Chat message style (local variables: ${player}, ${message})
+    "localeChat": "...",            // Locale chat message style (local variables: ${player}, ${message})
     "join": "...",                  // Join message (local variables: ${player})
     "joinRenamed": "...",           // Join message after name change (local variables: ${player}, ${old_name})
     "left": "...",                  // Player leaving server (local variables: ${player})
@@ -73,6 +79,8 @@ Additionally, every message type has few own local variables.
       }
     }
   ],
+  "enableLocalChat": true,             // Enables local chat channel
+  "localChatRadius": 100,              // Local chat radius
   "legacyChatFormatting": false,       // Enables support for legacy (&x) codes in chat (only when typed by player)
   "parseLinksInChat": true,            // Enables parsing of links in chat
   "enableMarkdown": true,              // Enables markdown
@@ -101,7 +109,8 @@ It supports all default ones with addition of `<item>` tag.
   "_comment": "Before changing anything, see https://github.com/Patbox/StyledChat#configuration",
   "defaultStyle": {
     "displayName": "${vanillaDisplayName}",
-    "chat": "${player} <dark_gray>»</dark_gray> <gray>${message}",
+    "chat": "[G] ${player} <dark_gray>»</dark_gray> <gray>${message}",
+    "localChat": "[L] ${player} <dark_gray>»</dark_gray> <gray>${message}",
     "join": "<gray>✚</gray> <color:#85ff8f><lang:multiplayer.player.joined:'${player}'>",
     "joinRenamed": "<gray>✚</gray> <color:#85ff8f><lang:multiplayer.player.joined.renamed:'${player}':'${old_name}'>",
     "left": "<gray>☁</gray> <color:#ff8585><lang:multiplayer.player.left:'${player}'>",
@@ -156,6 +165,8 @@ It supports all default ones with addition of `<item>` tag.
       "emotes": {}
     }
   ],
+  "enableLocalChat": true,
+  "localChatRadius": 100,
   "legacyChatFormatting": true,
   "parseLinksInChat": true,
   "enableMarkdown": true,

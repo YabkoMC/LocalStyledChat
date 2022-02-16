@@ -10,7 +10,7 @@
     "Braunly"
   ],
   "contact": {
-    "homepage": "https://pb4.eu",
+    "homepage": "https://github.com/yabkomc/LocalStyledChat",
     "sources": "https://github.com/yabkomc/LocalStyledChat"
   },
 
@@ -27,7 +27,15 @@
   ],
 
   "depends": {
-    "minecraft": ">=1.18-rc.1"
+    "fabricloader": ">=0.13.1",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17",
+    "fabric-permissions-api-v0": "*",
+    "playerabilitylib": ">=1.5.0"
+  },
+  "suggests": {
+    "luckperms": ">=5.3"
   },
   "breaks": {
     "styledchat": "*"
