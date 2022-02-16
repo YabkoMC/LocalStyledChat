@@ -1,6 +1,6 @@
-# Locale Styled Chat
+# Local Styled Chat
 
-### This is fork of [StyledChat](https://github.com/Patbox/StyledChat). Not addon!  
+### This is fork of [StyledChat](https://github.com/Patbox/StyledChat) with local (range-limited) chat channel. Not addon!  
 It requires [PlayerAbilityLib](https://www.curseforge.com/minecraft/mc-mods/pal)
 
 It's a simple mod that allows server owners to change how their chat looks!
