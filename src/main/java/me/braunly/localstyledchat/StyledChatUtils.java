@@ -1,25 +1,23 @@
-package eu.pb4.styledchat;
+package me.braunly.localstyledchat;
 
 import eu.pb4.placeholders.PlaceholderAPI;
 import eu.pb4.placeholders.TextParser;
 import eu.pb4.placeholders.util.GeneralUtils;
 import eu.pb4.placeholders.util.TextParserUtils;
-import eu.pb4.styledchat.config.Config;
-import eu.pb4.styledchat.config.ConfigManager;
+import me.braunly.localstyledchat.config.Config;
+import me.braunly.localstyledchat.config.ConfigManager;
 import me.lucko.fabric.api.permissions.v0.Permissions;
+import net.minecraft.network.MessageType;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.PlayerManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.*;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.AbstractMap;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 
 public final class StyledChatUtils {
@@ -49,7 +47,6 @@ public final class StyledChatUtils {
 
     public static final String FORMAT_PERMISSION_BASE = "styledchat.format.";
     public static final Pattern EMOTE_PATTERN = Pattern.compile("[:](?<id>[^:]+)[:]");
-    ;
 
     public static Text parseText(String input) {
         return !input.isEmpty() ? TextParser.parse(input) : IGNORED_TEXT;

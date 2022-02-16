@@ -1,8 +1,8 @@
-package eu.pb4.styledchat.config.data.old;
+package me.braunly.localstyledchat.config.data.old;
 
 import eu.pb4.placeholders.TextParser;
-import eu.pb4.styledchat.config.data.ChatStyleData;
-import eu.pb4.styledchat.config.data.ConfigData;
+import me.braunly.localstyledchat.config.data.ChatStyleData;
+import me.braunly.localstyledchat.config.data.ConfigData;
 
 import java.util.HashMap;
 import java.util.stream.Collectors;

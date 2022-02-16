@@ -1,4 +1,4 @@
-package eu.pb4.styledchat.config.data;
+package me.braunly.localstyledchat.config.data;
 
 
 import java.util.Objects;
@@ -8,6 +8,7 @@ public class ChatStyleData {
 
     public String displayName;
     public String chat;
+    public String localChat;
     public String join;
     public String joinRenamed;
     public String joinFirstTime;
@@ -28,6 +29,7 @@ public class ChatStyleData {
         ChatStyleData data = new ChatStyleData();
         data.displayName = "${default}";
         data.chat = "<${player}> ${message}";
+        data.localChat = "<yellow>[L] <white><${player}> <yellow>${message}";
         data.join = "<yellow><lang:multiplayer.player.joined:'${player}'></yellow>";
         data.joinRenamed = "<yellow><lang:multiplayer.player.joined.renamed:'${player}':'${old_name}'></yellow>";
         data.joinFirstTime = "<yellow><lang:multiplayer.player.joined:'${player}'></yellow>";
@@ -49,6 +51,7 @@ public class ChatStyleData {
     public void fillMissing() {
         this.displayName = Objects.requireNonNullElse(this.displayName, DEFAULT.displayName);
         this.chat = Objects.requireNonNullElse(this.chat, DEFAULT.chat);
+        this.localChat = Objects.requireNonNullElse(this.localChat, DEFAULT.localChat);
         this.join = Objects.requireNonNullElse(this.join, DEFAULT.join);
         this.joinRenamed = Objects.requireNonNullElse(this.joinRenamed, DEFAULT.joinRenamed);
         this.joinFirstTime = Objects.requireNonNullElse(this.joinFirstTime, DEFAULT.joinFirstTime);

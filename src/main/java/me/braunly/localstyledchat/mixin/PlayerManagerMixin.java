@@ -1,7 +1,7 @@
-package eu.pb4.styledchat.mixin;
+package me.braunly.localstyledchat.mixin;
 
-import eu.pb4.styledchat.StyledChatUtils;
-import eu.pb4.styledchat.config.ConfigManager;
+import me.braunly.localstyledchat.StyledChatUtils;
+import me.braunly.localstyledchat.config.ConfigManager;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.MessageType;
 import net.minecraft.server.PlayerManager;
@@ -17,7 +17,6 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.UUID;
-import java.util.function.Function;
 
 
 @Mixin(PlayerManager.class)

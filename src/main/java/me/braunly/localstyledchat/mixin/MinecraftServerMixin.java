@@ -1,7 +1,6 @@
-package eu.pb4.styledchat.mixin;
+package me.braunly.localstyledchat.mixin;
 
-import eu.pb4.styledchat.StyledChatUtils;
-import net.minecraft.network.MessageType;
+import me.braunly.localstyledchat.StyledChatUtils;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;

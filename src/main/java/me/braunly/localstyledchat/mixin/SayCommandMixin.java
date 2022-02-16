@@ -1,22 +1,17 @@
-package eu.pb4.styledchat.mixin;
+package me.braunly.localstyledchat.mixin;
 
 import com.mojang.brigadier.context.CommandContext;
 import eu.pb4.placeholders.PlaceholderAPI;
 import eu.pb4.placeholders.TextParser;
-import eu.pb4.styledchat.StyledChatUtils;
-import eu.pb4.styledchat.config.ConfigManager;
-import net.minecraft.command.argument.MessageArgumentType;
-import net.minecraft.server.command.MeCommand;
+import me.braunly.localstyledchat.StyledChatUtils;
+import me.braunly.localstyledchat.config.ConfigManager;
 import net.minecraft.server.command.SayCommand;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Map;
 

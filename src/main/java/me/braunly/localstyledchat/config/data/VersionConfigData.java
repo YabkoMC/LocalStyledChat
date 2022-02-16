@@ -1,6 +1,6 @@
-package eu.pb4.styledchat.config.data;
+package me.braunly.localstyledchat.config.data;
 
-import eu.pb4.styledchat.config.ConfigManager;
+import me.braunly.localstyledchat.config.ConfigManager;
 
 public class VersionConfigData {
     public int CONFIG_VERSION_DONT_TOUCH_THIS = ConfigManager.VERSION;

@@ -1,8 +1,8 @@
-package eu.pb4.styledchat.config.data;
+package me.braunly.localstyledchat.config.data;
 
 import eu.pb4.placeholders.TextParser;
-import eu.pb4.styledchat.StyledChatUtils;
-import eu.pb4.styledchat.config.ConfigManager;
+import me.braunly.localstyledchat.StyledChatUtils;
+import me.braunly.localstyledchat.config.ConfigManager;
 import net.minecraft.util.Formatting;
 
 import java.util.*;
@@ -18,6 +18,8 @@ public class ConfigData {
 
     public List<PermissionEmotes> permissionEmoticons = new ArrayList<>();
 
+    public boolean enableLocalChat = true;
+    public int localChatRadius = 100;
     public boolean legacyChatFormatting = true;
     public boolean parseLinksInChat = true;
     public boolean enableMarkdown = true;

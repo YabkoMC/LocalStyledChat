@@ -1,16 +1,19 @@
-package eu.pb4.styledchat.mixin;
+package me.braunly.localstyledchat.mixin;
 
 import eu.pb4.placeholders.PlaceholderAPI;
 import eu.pb4.placeholders.TextParser;
-import eu.pb4.styledchat.StyledChatUtils;
-import eu.pb4.styledchat.config.ConfigManager;
+import me.braunly.localstyledchat.StyledChatUtils;
+import me.braunly.localstyledchat.config.ConfigManager;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.command.TeamMsgCommand;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Map;

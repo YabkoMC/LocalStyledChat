@@ -1,15 +1,14 @@
-package eu.pb4.styledchat.config;
+package me.braunly.localstyledchat.config;
 
 
 import eu.pb4.placeholders.PlaceholderAPI;
 import eu.pb4.placeholders.TextParser;
-import eu.pb4.styledchat.StyledChatUtils;
-import eu.pb4.styledchat.config.data.ChatStyleData;
-import eu.pb4.styledchat.config.data.ConfigData;
 import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
+import me.braunly.localstyledchat.StyledChatUtils;
+import me.braunly.localstyledchat.config.data.ChatStyleData;
+import me.braunly.localstyledchat.config.data.ConfigData;
 import me.lucko.fabric.api.permissions.v0.Permissions;
 import net.minecraft.entity.passive.TameableEntity;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -89,6 +88,19 @@ public final class Config {
             }
         }
         return this.defaultStyle.getChat(player, message);
+    }
+
+    public Text getLocalChat(ServerPlayerEntity player, Text message) {
+        ServerCommandSource source = player.getCommandSource();
+        for (PermissionStyle entry : this.permissionStyle) {
+            if (Permissions.check(source, entry.permission, entry.opLevel)) {
+                Text text = entry.style.getLocalChat(player, message);
+                if (text != null) {
+                    return text;
+                }
+            }
+        }
+        return this.defaultStyle.getLocalChat(player, message);
     }
 
     public Text getJoin(ServerPlayerEntity player) {

@@ -1,11 +1,11 @@
-package eu.pb4.styledchat.config;
+package me.braunly.localstyledchat.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import eu.pb4.styledchat.StyledChatMod;
-import eu.pb4.styledchat.config.data.ConfigData;
-import eu.pb4.styledchat.config.data.VersionConfigData;
-import eu.pb4.styledchat.config.data.old.ConfigDataV1;
+import me.braunly.localstyledchat.StyledChatMod;
+import me.braunly.localstyledchat.config.data.ConfigData;
+import me.braunly.localstyledchat.config.data.VersionConfigData;
+import me.braunly.localstyledchat.config.data.old.ConfigDataV1;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.commons.io.IOUtils;
 
@@ -25,7 +25,7 @@ public class ConfigManager {
     public static boolean loadConfig() {
         try {
             ConfigData config;
-            File configFile = new File(FabricLoader.getInstance().getConfigDir().toFile(), "styled-chat.json");
+            File configFile = new File(FabricLoader.getInstance().getConfigDir().toFile(), "local-styled-chat.json");
 
 
             if (configFile.exists()) {

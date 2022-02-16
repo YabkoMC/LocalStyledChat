@@ -1,4 +1,4 @@
-package eu.pb4.styledchat;
+package me.braunly.localstyledchat;
 
 import eu.pb4.placeholders.TextParser;
 import net.fabricmc.fabric.api.event.Event;

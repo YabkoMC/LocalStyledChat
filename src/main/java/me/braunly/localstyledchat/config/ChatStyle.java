@@ -1,8 +1,8 @@
-package eu.pb4.styledchat.config;
+package me.braunly.localstyledchat.config;
 
 import eu.pb4.placeholders.PlaceholderAPI;
-import eu.pb4.styledchat.StyledChatUtils;
-import eu.pb4.styledchat.config.data.ChatStyleData;
+import me.braunly.localstyledchat.StyledChatUtils;
+import me.braunly.localstyledchat.config.data.ChatStyleData;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -14,6 +14,7 @@ import java.util.Map;
 public class ChatStyle {
     public final Text displayName;
     public final Text chat;
+    public final Text localChat;
     public final Text join;
     public final Text joinFirstTime;
     public final Text joinRenamed;
@@ -32,6 +33,7 @@ public class ChatStyle {
     public ChatStyle(ChatStyleData data, ChatStyle defaultStyle) {
         this.displayName = data.displayName != null ? StyledChatUtils.parseText(data.displayName.replace("%player:displayname%", "")) : defaultStyle.displayName;
         this.chat = data.chat != null ? StyledChatUtils.parseText(data.chat) : defaultStyle.chat;
+        this.localChat = data.localChat != null ? StyledChatUtils.parseText(data.localChat) : defaultStyle.localChat;
         this.join = data.join != null ? StyledChatUtils.parseText(data.join) : defaultStyle.join;
         this.joinFirstTime = data.joinFirstTime != null ? StyledChatUtils.parseText(data.joinFirstTime) : this.join;
         this.joinRenamed = data.joinRenamed != null ? StyledChatUtils.parseText(data.joinRenamed) : defaultStyle.joinRenamed;
@@ -52,6 +54,7 @@ public class ChatStyle {
     public ChatStyle(ChatStyleData data) {
         this.displayName = data.displayName != null ? StyledChatUtils.parseText(data.displayName.replace("%player:displayname%", "")) : null;
         this.chat = data.chat != null ? StyledChatUtils.parseText(data.chat) : null;
+        this.localChat = data.localChat != null ? StyledChatUtils.parseText(data.localChat) : null;
         this.join = data.join != null ? StyledChatUtils.parseText(data.join) : null;
         this.joinRenamed = data.joinRenamed != null ? StyledChatUtils.parseText(data.joinRenamed) : null;
         this.joinFirstTime = data.joinFirstTime != null ? StyledChatUtils.parseText(data.joinFirstTime) : null;
@@ -96,6 +99,21 @@ public class ChatStyle {
 
         return PlaceholderAPI.parsePredefinedText(
                 PlaceholderAPI.parseText(this.chat, player),
+                PlaceholderAPI.PREDEFINED_PLACEHOLDER_PATTERN,
+                Map.of("player", player.getDisplayName(),
+                        "message", message)
+        );
+    }
+
+    public Text getLocalChat(ServerPlayerEntity player, Text message) {
+        if (this.localChat == null) {
+            return null;
+        } else if (this.localChat == StyledChatUtils.IGNORED_TEXT) {
+            return StyledChatUtils.IGNORED_TEXT;
+        }
+
+        return PlaceholderAPI.parsePredefinedText(
+                PlaceholderAPI.parseText(this.localChat, player),
                 PlaceholderAPI.PREDEFINED_PLACEHOLDER_PATTERN,
                 Map.of("player", player.getDisplayName(),
                         "message", message)

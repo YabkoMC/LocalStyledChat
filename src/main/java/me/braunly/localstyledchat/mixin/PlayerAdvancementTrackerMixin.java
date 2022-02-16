@@ -1,7 +1,7 @@
-package eu.pb4.styledchat.mixin;
+package me.braunly.localstyledchat.mixin;
 
-import eu.pb4.styledchat.config.Config;
-import eu.pb4.styledchat.config.ConfigManager;
+import me.braunly.localstyledchat.config.Config;
+import me.braunly.localstyledchat.config.ConfigManager;
 import net.minecraft.advancement.PlayerAdvancementTracker;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;

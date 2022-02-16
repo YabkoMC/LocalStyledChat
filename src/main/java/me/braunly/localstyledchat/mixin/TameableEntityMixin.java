@@ -1,6 +1,6 @@
-package eu.pb4.styledchat.mixin;
+package me.braunly.localstyledchat.mixin;
 
-import eu.pb4.styledchat.config.ConfigManager;
+import me.braunly.localstyledchat.config.ConfigManager;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;

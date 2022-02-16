@@ -20,6 +20,15 @@ repositories {
 	maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 	maven { url 'https://maven.nucleoid.xyz' }
 	maven { url 'https://maven.gegy.dev' }
+	maven {
+		name = 'Ladysnake Mods'
+		url = 'https://ladysnake.jfrog.io/artifactory/mods'
+		content {
+			includeGroup 'io.github.ladysnake'
+			includeGroupByRegex 'io\\.github\\.onyxstudios.*'
+		}
+	}
+
 
 }
 
@@ -36,6 +45,8 @@ dependencies {
 
 	modImplementation include("eu.pb4:placeholder-api:1.1.3+1.17.1")
 	modImplementation include("me.lucko:fabric-permissions-api:0.1-SNAPSHOT")
+
+	modImplementation include("io.github.ladysnake:PlayerAbilityLib:${project.pal_version}")
 
 	//modRuntime "supercoder79:databreaker:0.2.7"
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.

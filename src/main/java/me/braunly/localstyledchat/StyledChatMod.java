@@ -1,7 +1,8 @@
-package eu.pb4.styledchat;
+package me.braunly.localstyledchat;
 
-import eu.pb4.styledchat.command.Commands;
-import eu.pb4.styledchat.config.ConfigManager;
+import me.braunly.localstyledchat.command.Commands;
+import me.braunly.localstyledchat.config.ConfigManager;
+import me.braunly.localstyledchat.config.data.LocalChatAbility;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.loader.api.FabricLoader;
@@ -10,17 +11,22 @@ import org.apache.logging.log4j.Logger;
 
 
 public class StyledChatMod implements ModInitializer {
-	public static final Logger LOGGER = LogManager.getLogger("Styled Chat");
-	public static String VERSION = FabricLoader.getInstance().getModContainer("styledchat").get().getMetadata().getVersion().getFriendlyString();
+	public static final String MOD_ID = "localstyledchat";
+	public static final Logger LOGGER = LogManager.getLogger("Local Styled Chat");
+	public static String VERSION = FabricLoader.getInstance().getModContainer(MOD_ID).get().getMetadata().getVersion().getFriendlyString();
 
 	@Override
 	public void onInitialize() {
 		this.crabboardDetection();
-		Commands.register();
+
+		LocalChatAbility.init();
+
 		ServerLifecycleEvents.SERVER_STARTING.register((s) -> {
 			this.crabboardDetection();
 			ConfigManager.loadConfig();
 		});
+
+		Commands.register();
 	}
 
 	private void crabboardDetection() {
