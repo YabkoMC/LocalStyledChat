@@ -1,16 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "styledchat",
+  "id": "localstyledchat",
   "version": "${version}",
 
-  "name": "Styled Chat",
+  "name": "Local Styled Chat",
   "description": "Change look of yours server chat!",
   "authors": [
-    "Patbox"
+    "Patbox",
+    "Braunly"
   ],
   "contact": {
-    "homepage": "https://pb4.eu",
-    "sources": "https://github.com/Patbox/StyledChat"
+    "homepage": "https://github.com/yabkomc/LocalStyledChat",
+    "sources": "https://github.com/yabkomc/LocalStyledChat"
   },
 
   "license": "LGPLv3",
@@ -18,21 +19,25 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "eu.pb4.styledchat.StyledChatMod"
+      "me.braunly.localstyledchat.StyledChatMod"
     ]
   },
   "mixins": [
-    "styledchat.mixins.json"
+    "localstyledchat.mixins.json"
   ],
 
   "depends": {
-    "minecraft": ">=1.19.1-beta.2"
+    "fabricloader": ">=0.14.8",
+    "fabric": "*",
+    "minecraft": "1.19.x",
+    "java": ">=17",
+    "fabric-permissions-api-v0": "*",
+    "playerabilitylib": ">=1.5.0"
   },
-  "custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.discord": "https://pb4.eu/discord"
-      }
-    }
+  "suggests": {
+    "luckperms": ">=5.3"
+  },
+  "breaks": {
+    "styledchat": "*"
   }
 }

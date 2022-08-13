@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.braunlylocalstyledchat.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "CommandManagerMixin",
+    "commands.MeCommandMixin",
+    "MessageArgumentTypeMixin",
+    "MessageArgumentTypeSignedMessageMixin",
+    "commands.MessageCommandMixin",
+    "MessageFormatMixin",
+    "MessageTypeMixin",
+    "MinecraftServerMixin",
+    "PlayerAdvancementTrackerMixin",
+    "PlayerEntityMixin",
+    "PlayerManagerMixin",
+    "commands.SayCommandMixin",
+    "SentMessageChatMixin",
+    "SentMessageProfilelessMixin",
+    "ServerMessageEventsMixin",
+    "ServerPlayerEntityMixin",
+    "ServerPlayNetworkManagerMixin",
+    "SignedMessageMixin",
+    "TameableEntityMixin",
+    "commands.TeamMsgCommandMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
